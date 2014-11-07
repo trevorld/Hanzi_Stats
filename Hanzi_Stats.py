@@ -2,6 +2,7 @@
 # Modified Hanja plugin to count statistics for Hanzi (simplified), all credits go to original authors.
 # Word-list taken from previous hanzi stats plugin: Hanzi_Stats_New_HSK_20110411__show_all_hanzi__6000_chars
 # Copyright: Ben Lickly <blickly@berkeley.edu>,
+#            Trevor L. Davis <trevor.l.davis@gmail.com>
 #            based on Japanese Stats by Damien Elmes <anki@ichi2.net>
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 #

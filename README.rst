@@ -13,3 +13,5 @@ It was originally written by Ben Lickly based on Japanese Stats by Damien Elmes.
 
 This version includes small modifications by Trevor L. Davis to fix some typos and get rid of the HSK A, HSK B, HSK E, and HSK I categories (whatever they were).  Also clicking character links now sends you to characterpop.com instead of dict.cn.
 
+The plugin is available under the GNU GPL, version 3 or later;  http://www.gnu.org/copyleft/gpl.html
+

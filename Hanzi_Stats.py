@@ -210,7 +210,8 @@ where c.nid = n.id and mid = ? and c.queue > 0) """, m['id']):
         return out + "<br/>"
 
     def naverhanziLink(self, hanzi):
-        base="http://dict.cn/"
+        # base="http://dict.cn/"
+        base="http://characterpop.com/explode/"
         url=base + hanzi
         return '<a href="%s">%s</a>' % (url, hanzi)
 

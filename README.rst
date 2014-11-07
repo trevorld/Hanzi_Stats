@@ -10,5 +10,5 @@ Originally written by Ben Lickly based on Japanese Stats by Damien Elmes.
 
 Wordlist is based on the one used in the Anki 1.x plugin: Hanzi_Stats_New_HSK_20110411__show_all_hanzi__6000_chars.
 
-Includes small modifications by Trevor L. Davis to fix some typos and get rid of the HSK A, HSK B, HSK E, and HSK I categories (whatever they are).
+Includes small modifications by Trevor L. Davis to fix some typos and get rid of the HSK A, HSK B, HSK E, and HSK I categories (whatever they were).
 

@@ -1,3 +1,6 @@
+Hanzi Stats
+-----------
+
 This Anki add-on calculates the number of Hanzi (simplified only) that you have learned so far: 
 
   - 6000 most frequently used characters (divided into 12 categories) 
@@ -15,3 +18,9 @@ This version includes small modifications by Trevor L. Davis to fix some typos a
 
 The plugin is available under the GNU GPL, version 3 or later;  http://www.gnu.org/copyleft/gpl.html
 
+Data Notes
+----------
+
+``data/HSK-2012-words.txt`` is the export of first sheet from http://files.hskhsk.com/lists/HSK-2012.xls which is supposed to be a copy of the official 2012 new HSK word lists.
+
+``data/internet-zh.txt`` and ``data/lcmc.num`` are frequency lists from the "Chinese Internet Corpus" compiled by Serge Sharoff in Feb. 2005 and The Lancaster Corpus of Mandarin Chinese created by Richard Xiao and Tony McEnery.  Both are available at http://corpus.leeds.ac.uk/query-zh.html.

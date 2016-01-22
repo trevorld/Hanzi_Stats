@@ -44,7 +44,7 @@ class HSK():
 
     def read_in_characters(self):
 
-        f_words = open('HSK-2012-words.txt')
+        f_words = open('data/HSK-2012-words.txt')
 
         for line in f_words:
             word_note_level = line.split('（')

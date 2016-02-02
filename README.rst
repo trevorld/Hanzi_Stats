@@ -23,4 +23,10 @@ Data Notes
 
 ``data/HSK-2012-words.txt`` is the export of first sheet from http://files.hskhsk.com/lists/HSK-2012.xls which is supposed to be a copy of the official 2012 new HSK word lists.
 
-``data/internet-zh.txt`` and ``data/lcmc.num`` are frequency lists from the "Chinese Internet Corpus" compiled by Serge Sharoff in Feb. 2005 and The Lancaster Corpus of Mandarin Chinese created by Richard Xiao and Tony McEnery.  Both are available at http://corpus.leeds.ac.uk/query-zh.html.
+``data/i-zh-char.num.html`` is a character frequency lists from the "Chinese Internet Corpus" compiled by Serge Sharoff in Feb. 2005.  It is available at http://corpus.leeds.ac.uk/query-zh.html.
+
+Details available from:
+
+Sharoff, S. (2006) Creating general-purpose corpora using automated search engine queries. In Marco Baroni and Silvia Bernardini, editors, WaCk y! Working papers on the Web as Corpus. Gedit, Bologna. 
+
+http://corpus.leeds.ac.uk/serge/publications/wacky-paper.pdf

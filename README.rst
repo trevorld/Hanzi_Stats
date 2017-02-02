@@ -6,7 +6,7 @@ This Anki add-on calculates the number of Hanzi (simplified only) that you have 
   - New HSK　levels
   - 6000 most frequently used characters (divided into 12 categories) 
 
-To install put ``Hanzi_Stats.py`` into the ``addons`` folder in your Anki folder.
+To install put ``Hanzi_Stats.py`` into the ``addons`` folder in your Anki folder or install using the Anki plugin manager: https://ankiweb.net/shared/info/181243826
 
 Project Page
 ------------

@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-# Modified Hanja plugin to count statistics for Hanzi (simplified), all credits go to original authors.
-# Word-list taken from previous hanzi stats plugin: Hanzi_Stats_New_HSK_20110411__show_all_hanzi__6000_chars
+# Modified Hanja plugin to count statistics for Hanzi (simplified)
 # Copyright: Ben Lickly <blickly@berkeley.edu>,
 #            Trevor L. Davis <trevor.l.davis@gmail.com>
 #            based on Japanese Stats by Damien Elmes <anki@ichi2.net>
+#            Using code snippet from Chinese Support by  Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
-#
-# hanzi statistics.
 #
 
 from PyQt4.QtCore import *
@@ -19,6 +17,18 @@ from aqt.webview import AnkiWebView
 from aqt.qt import *
 from aqt.utils import restoreGeom, saveGeom
 
+## Code snippet from Chinese support
+def addchars(chars, txt):
+    "List each chinese character, with its earliest study date"
+    try:
+        for c in txt:
+            try:
+                if re.match( u"[\u3400-\u9fff]", c):
+                    chars.add(c)
+            except:
+                chars.add(c)
+    except:
+        pass
 
 
 freqHanzi = [
@@ -69,19 +79,18 @@ class hanziStats(object):
         return self._gradeHash.get(unichar, [0])
 
     # Currently unused function for tallying a "total score" from the counts
-    def totalScoreStr(self, counts):
-      def score(cnts):
-          MID,HIGH = 9,10
-          return (16*cnts[1] + 8*cnts[2] + 4*cnts[3] + 2*cnts[4] + cnts[5]
-              #+ 0.5*cnts[6] #+ 0.25*cnts[7] + 2.5
-              + cnts[MID] #+ 0.5*cnts[HIGH]
-              - 4
-              )
-      myscore = score([c[1] for c in counts])
-      maxscore = score([c[2] for c in counts])
-      return  _("Score: %d out of %d (%0.1f%%)") % (myscore, maxscore,
-          float(myscore*100)/maxscore)
-
+    # def totalScoreStr(self, counts):
+    #   def score(cnts):
+    #       MID,HIGH = 9,10
+    #       return (16*cnts[1] + 8*cnts[2] + 4*cnts[3] + 2*cnts[4] + cnts[5]
+    #           #+ 0.5*cnts[6] #+ 0.25*cnts[7] + 2.5
+    #           + cnts[MID] #+ 0.5*cnts[HIGH]
+    #           - 4
+    #           )
+    #   myscore = score([c[1] for c in counts])
+    #   maxscore = score([c[2] for c in counts])
+    #   return  _("Score: %d out of %d (%0.1f%%)") % (myscore, maxscore,
+    #       float(myscore*100)/maxscore)
 
     # FIXME: as it's html, the width doesn't matter
     def hanziCountStr(self, gradename, count, total=0, width=0):
@@ -134,18 +143,24 @@ class hanziStats(object):
 #              for s in self.hanziGrade(u):
 #                self.hanziSets[s].add(u)
 
+
+
     def genhanziSets(self):
         self.hanziSets = [set([]) for g in self.hanziGrades]
+        # chars = set()
+        # #self.mids = []
+        # for m in self.col.models.all():
+        #     if True:
+        #     # if "chinese" in m['name'].lower():
+        #         for row in self.col.db.execute("select flds from notes where id in ( select n.id from cards c, notes n where c.nid = n.id and mid = ? and c.queue > 0) ", m['id']):
+        #             chars.update(row[0])
+
         chars = set()
-        #self.mids = []
-        for m in self.col.models.all():
-            if True:#"japanese" in m['name'].lower():
-                #self.mids.append(m['id'])
-                for row in self.col.db.execute("""
-select flds from notes where id in (
-select n.id from cards c, notes n
-where c.nid = n.id and mid = ? and c.queue > 0) """, m['id']):
-                    chars.update(row[0])
+
+        ## Code snippet from Chinese support
+        for first_field, first_study_date in self.col.db.execute("select notes.sfld, min(revlog.id)/1000 as date from notes, cards, revlog where notes.id=cards.nid and cards.id=revlog.cid and cards.queue>0 group by notes.id;" ):
+            addchars(chars, first_field)
+
         for u in chars:
             u = unicodedata.normalize('NFC', u)
             if ishanzi(u):

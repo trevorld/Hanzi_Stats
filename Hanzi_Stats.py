@@ -55,7 +55,7 @@ freqHanzi = [
 
 def ishanzi(unichar):
     try:
-        return unicodedata.name(unichar).find('CJK UNIFIED IDEOGRAPH') >= 0
+        return unicodedata.name(unichar).find('CJK UNIFIED IDEOGRAPH') >= 0 or unicodedata.name(unichar).find('BOPOMOFO') >= 0
     except ValueError:
         # a control character
         return False

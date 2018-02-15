@@ -17,9 +17,8 @@ To install put the file ``addons/Hanzi_Stats.py`` into the ``addons`` folder in 
 Anki 2.1.x
 ~~~~~~~~~~
 
-Porting the Hanzi_Stats plugin to Anki 2.1.x is a `work in progress <https://github.com/trevorld/Hanzi_Stats/issues/5>`_.
-
-.. To install put the folder ``addons/Hanzi_Stats`` into the ``addons21`` folder in your Anki folder or install using the Anki plugin manager: 
+To install put the folder ``addons/Hanzi_Stats`` into the ``addons21`` folder in your Anki folder or install using the Anki plugin manager: https://ankiweb.net/shared/info/181243826
+ 
 
 Project Page
 ------------
@@ -31,12 +30,12 @@ History
 
 This is an updated version of the Anki Hanzi Stats plugin by Ben Lickly that could previously be found at https://ankiweb.net/shared/info/296672579.  This version includes the following modifications by Trevor L. Davis:
 
-#. The New HSK character lists has been updated from the 2010 version to the 2012 version.
-#. The 6000 most frequently characters in the original plugin have been replaced by the list computed by Dr. Sharoff.  
-#. Only looks for characters in the first field instead of all fields.
-#. Clicking character links now sends you to hanzicraft.com instead of dict.cn.
-#. Got rid of the HSK A, HSK B, HSK E, and HSK I categories.
-#. Fixed some typos.
+1. The New HSK character lists has been updated from the 2010 version to the 2012 version.
+2. The 6000 most frequently characters in the original plugin have been replaced by the list computed by Dr. Sharoff.  
+3. Only looks for characters in the first field instead of all fields.
+4. Clicking character links now sends you to hanzicraft.com instead of dict.cn.
+5. Got rid of the HSK A, HSK B, HSK E, and HSK I categories.
+6. Fixed some typos.
 
 This plugin was originally written by Ben Lickly based on Japanese Stats by Damien Elmes.  This modified version also includes a couple modified code snippets from the Chinese Support plugin by Roland Sieker and Thomas Tempe (which was also based on a plugin by Damien Elmes).
 

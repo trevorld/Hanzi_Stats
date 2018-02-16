@@ -1,10 +1,11 @@
 Hanzi Stats
 -----------
 
-This Anki add-on calculates the number of Hanzi (simplified only) that you have learned so far in the following categories: 
+This Anki add-on calculates the number of Hanzi that you have learned so far in the following categories: 
 
-* New HSK levels
-* 6000 most frequently used characters (divided into 12 categories) 
+* New HSK levels 
+* 6000 most frequently used simplified characters (divided into 12 categories) 
+* 6000 most frequently used traditional characters (divided into 12 categories) 
 
 Installation
 ------------
@@ -51,3 +52,5 @@ Data Notes
 Details available from:
 
 Sharoff, S. (2006) Creating general-purpose corpora using automated search engine queries. In Marco Baroni and Silvia Bernardini, editors, WaCk y! Working papers on the Web as Corpus. Gedit, Bologna.  http://corpus.leeds.ac.uk/serge/publications/wacky-paper.pdf
+
+``data/traditional_frequency.txt`` is a character frequency list from a corpus of all the BIG-5 Chinese characters that appeared on Usenet newsgroups during 1993-1994 which was compiled by Shih-Kun Huang. It is available at http://technology.chtsai.org/charfreq/

@@ -32,11 +32,12 @@ History
 This is an updated version of the Anki Hanzi Stats plugin by Ben Lickly that could previously be found at https://ankiweb.net/shared/info/296672579.  This version includes the following modifications by Trevor L. Davis:
 
 1. The New HSK character lists has been updated from the 2010 version to the 2012 version.
-2. The 6000 most frequently characters in the original plugin have been replaced by the list computed by Dr. Sharoff.  
-3. Only looks for characters in the first field instead of all fields.
-4. Clicking character links now sends you to hanzicraft.com instead of dict.cn.
-5. Got rid of the HSK A, HSK B, HSK E, and HSK I categories.
-6. Fixed some typos.
+2. The 6000 most frequent simplified characters in the original plugin have been replaced by the list computed by Dr. Sharoff.  
+3. Add a new list of 6000 most frequent traditional characters
+4. Only looks for characters in the first field instead of all fields.
+5. Clicking character links now sends you to hanzicraft.com instead of dict.cn.
+6. Got rid of the HSK A, HSK B, HSK E, and HSK I categories.
+7. Fixed some typos.
 
 This plugin was originally written by Ben Lickly based on Japanese Stats by Damien Elmes.  This modified version also includes a couple modified code snippets from the Chinese Support plugin by Roland Sieker and Thomas Tempe (which was also based on a plugin by Damien Elmes).
 

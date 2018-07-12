@@ -17,8 +17,6 @@ from aqt.webview import AnkiWebView
 from aqt.qt import *
 from aqt.utils import restoreGeom, saveGeom
 
-config = mw.addonManager.getConfig(__name__)
-
 ## Code snippet from Chinese support
 def addchars(chars, txt):
     "List each chinese character, with its earliest study date"
@@ -132,18 +130,20 @@ class hanziStats(object):
 
         chars = set()
 
+        config = mw.addonManager.getConfig(__name__)
         fieldToUseForStats = config['fieldToUseForStats']
 
         # Code snippet from Chinese support
         # For each row, add the desired fields to the character lists.
         for fields, sortField, first_study_date in self.col.db.execute("select notes.flds, notes.sfld, min(revlog.id)/1000 as date from notes, cards, revlog where notes.id=cards.nid and cards.id=revlog.cid and cards.queue>0 group by notes.id;" ):
             if fieldToUseForStats == "all":
-               for field in fields:
+               fieldsAsList = fields.split('\x1F')
+               for field in fieldsAsList:
                   addchars(chars, field)
             elif fieldToUseForStats == "sortField":
                addchars(chars, sortField)
             else:
-               addchars(chars, fields[int(fieldToUseForStats)])
+               addchars(chars, fields[int(fieldToUseForStats) - 1]) #When using the specific column name subtract one to convert from the user displayed field numbers to the DB index.
 
         for u in chars:
             u = unicodedata.normalize('NFC', u)

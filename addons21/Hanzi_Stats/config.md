@@ -1,0 +1,3 @@
+Determines the field (or fields) to be used when finding characters to check against the HSK sets. When using sortField (default) it will use the 'Sort Field' column as defined in the deck browser.
+
+values: "sortField", "all", "0", "1", "2", "3"...

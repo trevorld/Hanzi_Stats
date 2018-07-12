@@ -3,7 +3,8 @@
 # Copyright: Ben Lickly <blickly@berkeley.edu>,
 #            Trevor L. Davis <trevor.l.davis@gmail.com>
 #            Based on Japanese Stats by Damien Elmes <anki@ichi2.net>
-#            Using code snippet from Chinese Support by  Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>
+#            Using code snippet from Chinese Support by  Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>,
+#            Kyle Waranis <infernalis@gmail.com>, 2018
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 #
 

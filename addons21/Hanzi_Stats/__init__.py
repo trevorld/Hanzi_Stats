@@ -143,7 +143,8 @@ class hanziStats(object):
             elif fieldToUseForStats == "sortField":
                addchars(chars, sortField)
             else:
-               addchars(chars, fields[int(fieldToUseForStats) - 1]) #When using the specific column name subtract one to convert from the user displayed field numbers to the DB index.
+               fieldsAsList = fields.split('\x1F')
+               addchars(chars, fieldsAsList[int(fieldToUseForStats) - 1]) #When using the specific column name subtract one to convert from the user displayed field numbers to the DB index.
 
         for u in chars:
             u = unicodedata.normalize('NFC', u)

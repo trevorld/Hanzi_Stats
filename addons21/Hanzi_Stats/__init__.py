@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 # Modified Hanja plugin to count statistics for Hanzi (simplified)
-# Copyright: Ben Lickly <blickly@berkeley.edu>,
-#            Trevor L. Davis <trevor.l.davis@gmail.com>
-#            Based on Japanese Stats by Damien Elmes <anki@ichi2.net>
-#            Using code snippet from Chinese Support by  Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>,
-#            Kyle Waranis <infernalis@gmail.com>, 2018
+# Copyright 2014, 2016-2018 Trevor L. Davis <trevor.l.davis@gmail.com>
+# Copyright 2018 Kyle Waranis <infernalis@gmail.com>
+# Copyright Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>
+# Copyright Ben Lickly <blickly@berkeley.edu>
+# Copyright Damien Elmes <anki@ichi2.net>
+# 
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 #
 
@@ -32,8 +33,8 @@ def addchars(chars, txt):
         pass
 
 
-freqHanzi = [
-    ('unlisted',''),
+freqHanziDefault = [
+    ('Unlisted',''),
     ('HSK Level 1','一七三上下不东个中么九习书买了二五些京亮人什今他们会住作你候做儿先八六关兴再写冷几出分前北医十午去友叫号吃同名后吗听呢和哪商喂喜喝四回国在坐块多大天太女她好妈姐子字学客家对小少岁工师年店开影很怎想我打时明星昨是月有朋服期本机来杯果校样桌椅欢气水汉没漂点热爱爸狗猫现生电的看睡租米系老能脑苹茶菜衣西见视觉认识话语说请读谁谢起车这那都里钟钱院雨面飞饭高'),
     ('HSK Level 2','丈两为乐也事介从以件休但体便公共准别到务动助千卖可右司吧告员咖哥唱啡因场备外夫奶妹妻始姓孩它完宜室宾就左已希帮常床弟往得忙快思息您情意慢懂房所手找报教新旁旅日早晚晴最望条次歌正步每比汽泳洗游火然牛玩班球瓜男病白百真眼着睛知票离穿站笑笔第等篮累红纸绍经给羊考肉舞色药虽蛋表要让诉试课贵走足跑路跳踢身边过运近还进远送道铅错长门问间阴雪零非题颜馆鱼鸡黑'),
     ('HSK Level 3','万且世业主久乎于伞位信借假健像元其典冒冬冰决净刚刮刷刻力办加努包化半单南卡历参又双发叔变口句只史向周响哭啊啤嘴园图地坏城境声复夏头奇如姨婚季安定实害容层居山差己市带帽干平应康张当心必忘怕急怪总惯感愿戏成或才扫把护担择拿换据接提搬放故数文料斤方旧易春更末朵李束板极查树根梯检楚楼段求河法注清渴满澡灯炼烧照熊爬爷片牙物特环理瓶甜用画界留疼瘦皮盘目直相短矮碗礼秋种空突答筷简算箱糕级练终结绩绿网者而耳聊聪育胖脚脸腿自舒般船节花草蓝蕉行街衫衬被裙裤角解议记讲词该调赛超越趣跟轻较辆迎迟选遇邮邻酒重铁银锻闻阳阿附除难需静鞋音须顾风饮饱饿香马骑鲜鸟黄鼻'),
@@ -65,6 +66,13 @@ freqHanzi = [
     ('Traditional Top 5500','囥玹桹詄鋃恒弁忸啣釦瘠鮪偆搵漉粿儆槤祗唳戡鉉紈皕蜉鴇芍掄滇皚褊駢臏黠囁鱔湳鍶懟閂砧痍貉慇擢璠汕听啕庾輊霑謄彝斕憭懌蕁鎯纇衊豕腴溥蜷褥瞼鬃醮鐳焗瞅熠嚓黧戇奐弒氈鮆囓惇蜇懍撻戽渟杷舢迨冢娌斛鄂裨燎臃餮讖秝蕘奲佃柢軻璩扺珗焂瑀萹踉皖鎰襤圴侄俵凈哧頎嶠顢灝孓岷柬鈷輓慼瓔种惙黽瑮闥髯橇簸咭畬綪蹓圻冑哂曷浹覃睥釉縞汔佘媞揕榚鄢翦鵒莢翕萋搆鎬蘑騫騾荇喢寑酢殞踰醛鱧倣陘幀鰓欷豝酚痾皙慳碓銖暹簌攷咈肏摽醚茨舷惴鈐綬膈豭濬旡峈洍焯殛裾撽橞嬲泗肱匍媾蓆鴆澧攆玀乜偀廌嫭坏怵晷瘉羸柪纍硃螻昉珩茪茯淖屣慬犘蹌淞硼犒颶蟠覲藷亍柎柺盻衾晢喑喏噉鋏璗鍘碁奘畚袈諶阯岬庛荎嗐瑗弈絀琿粳噥磴餽驃忤舺袪碥汾怛玥兗皋皰黍蒿賒豌檐麋砒掂跏煢艄葑壆遶錩瞴螯鯁瓃蠑苧旎孳裟錳簪霪彳扡厎柘悀砪掇嗒媺粲懨蹔蹭麤杓啁鉑頜褶醣齟鰥掤笳脢蛂戭蟘妁侑倀巽漕箸殮曩魑孥殂苠党凄剮豜憍囔艮幃煖冪簞瀲齬卌惼晹裎瑧儰撜阡姘枸栘舨瓠脣毽濮櫚櫬鼇汜岦衪郅旂茼雃犍竫摶榖儌獒闍騄糬鬘枇陂毬廄鞅輜褡怙琣腊痹樨濋苒掖釭媧愆楝萵銨鴒贗洁庳馗絣傱畹潀斲貘氖狎肴痂銑褫鍬咂坨掞摠盦鋹鴟顴叵篁嬝贍峗挴窆琚竤跫撘獪鱒伉郃涇盍鈸旖璘瞟縝饜扦哖悒揃稗触璊閰鍺瞱蹇蹩鵟饌佻泅盂浥赧萸睢稞潼'),
     ('Traditional Top 6000','螟夔怜邯苻雰祼艉餬燹櫸怏枴柞洮匐堊飭瘧燧牘霰芃妺怢怍芫苤痒螈鍇櫪蚩戢賅榫薨鍥歟魍网孢喎琡嶂噌澔諴橿襁鞥塋痱儈瘸蕈櫛璦穠鏜矓衢卲氡迣凎揠琰綃裐鉞鶻矘杠洌踟燐磬薜蠡麝粄荖埥堎蛁媜菾軫瑢踊勱謮讎轤灠褂蕞薊醴炅俛婕屙庹掅琲遄嫚摰憸擗魽圬苣酊舐綰瀋囀峓殄琁荺逋棓棱閞噘熵蓳鴗篳囫抿疥粕筧犖獐錙訄捋蛘暋駖諡薾鶚鰡俳梔涮酩縵鯧轡忮冼囹芵虯咾衁浼茬眭椄琤搐絻裞綷窳醍闃隬灕躝紉挈砟胴詁僭碣遘畿鐃芡剉嵎嫄溟鞞醯鐐攥纛斫苜桅砭訌笞鈽奭賡縊鄴壙奼柸枵洘圇祤菘嫋煲煐睒蒔嘳鄲薙鍠鶡仳牝卹氤匏堰閎煬嬈縉鷂蘸扙妗沏玓坯苺栴烔蚋凐畯詎嫈廕漼璆諅澪曛顗鶇鶖讌灩怩禺茆剜戛橈邐优冱泫呲怹苾苡砢祜茩痟痼誒諢擣闓韙蠓臠胰塽篙闈櫺蘚豸芼倢砵悾捵珽蚼傒棑硞寘楂稙暪懃謖嚙櫫蘶汛妣峒圄漯擭燮聱癘黷氶俇姽彘萁亄葥潳魠獞磲鴽鐿鶼枓琺稈櫝襖鐫孿吨柀枳秏淯狺婐掮莪堸渼楙篫諤懮艟龕尢佾傚孱隄楛痿嚅谿繒巟氘阨俓茦娸痐紺焱猢廋椳赨靸僯熞瘜蝮歕鵂嚝騅譠鷈驒鷿祆菟暍痳摭膂誥遛歙壎醱羼呅俅挎挳唪淍珺笘訧揂蛺蕓魈懰禰翾舋廾汴皴嶔撚嬪癆黜孀罌襬囗忯佸呤挀柷炷盷荂郜眥摡搕腩撗諗嬛骿旛襌齀鐙鰈鱆鷦魙圯舛柩耄莆鍔齜髖佷侗怞矸珅尃涗迾偑啍挻捰搰楜溏睕羥葀趒慓蜚嬅禛醐璫隰'),
  ]
+
+config = mw.addonManager.getConfig(__name__)
+categoriesToShow = config['categoriesToShow']
+freqHanzi = []
+for tt in freqHanziDefault:
+    if tt[0] in categoriesToShow:
+        freqHanzi.append(tt)
 
 def ishanzi(unichar):
     try:
@@ -145,7 +153,9 @@ class hanziStats(object):
                addchars(chars, sortField)
             else:
                fieldsAsList = fields.split('\x1F')
-               addchars(chars, fieldsAsList[int(fieldToUseForStats) - 1]) #When using the specific column name subtract one to convert from the user displayed field numbers to the DB index.
+               fieldIndex = int(fieldToUseForStats)
+               if 0 < fieldIndex <= len(fieldsAsList):
+                   addchars(chars, fieldsAsList[fieldIndex - 1]) #When using the specific column name subtract one to convert from the user displayed field numbers to the DB index.
 
         for u in chars:
             u = unicodedata.normalize('NFC', u)
@@ -216,10 +226,9 @@ class hanziStats(object):
         return out + "<br/>"
 
     def naverhanziLink(self, hanzi):
-        # base="http://dict.cn/"
-        # base="http://characterpop.com/explode/"
-        base="http://hanzicraft.com/character/"
-        url=base + hanzi
+        config = mw.addonManager.getConfig(__name__)
+        base_url = config['hanziURL']
+        url=base_url + hanzi
         return '<a href="%s">%s</a>' % (url, hanzi)
 
     def missingInGrade(self, gradeNum, check):

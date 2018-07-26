@@ -1,6 +1,10 @@
 Hanzi Stats
 -----------
 
+.. image:: http://www.repostatus.org/badges/latest/active.svg
+   :alt: Project Status: Active – The project has reached a stable, usable state and is being actively developed.
+   :target: http://www.repostatus.org/#active
+
 This Anki add-on calculates the number of Hanzi that you have learned so far in the following categories: 
 
 * New HSK levels 

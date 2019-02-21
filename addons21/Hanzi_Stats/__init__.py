@@ -238,9 +238,9 @@ class hanziStats(object):
 
     def controlButtons(self):
       buttons = [
-          "<a href='#' onclick=\"$('#missing').show();$('#seen').hide();$('#unlisted').hide();\"\>Missing</a>",
-          "<a href='#' onclick=\"$('#missing').hide();$('#seen').show();$('#unlisted').hide();\"\>Seen</a>",
-          "<a href='#' onclick=\"$('#missing').hide();$('#seen').hide();$('#unlisted').show();\"\>Unlisted</a>",
+          "<a href='#' onclick=\"$('#missing').show(); $('#seen').hide(); $('#unlisted').hide(); return false; \"\>Missing</a>",
+          "<a href='#' onclick=\"$('#missing').hide(); $('#seen').show(); $('#unlisted').hide(); return false; \"\>Seen</a>",
+          "<a href='#' onclick=\"$('#missing').hide(); $('#seen').hide(); $('#unlisted').show(); return false; \"\>Unlisted</a>",
           ]
       return "<p>" + "<br/>".join(buttons) + "</p>"
 

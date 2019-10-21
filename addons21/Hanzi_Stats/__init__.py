@@ -12,6 +12,7 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import unicodedata
+from anki.lang import _
 from anki.hooks import addHook
 from anki.utils import ids2str
 from aqt import mw

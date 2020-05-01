@@ -5,7 +5,7 @@
 # Copyright Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>
 # Copyright Ben Lickly <blickly@berkeley.edu>
 # Copyright Damien Elmes <anki@ichi2.net>
-# 
+#
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 #
 
@@ -201,7 +201,7 @@ class hanziStats(object):
                 continue
             out += "<h2>" + self.hanziGrades[grade][0] + "</h2>"
             out += self.mkhanziLinks(missing)
-        return out 
+        return out
 
     def missingReport(self):
         check = lambda x, y: x not in y
@@ -262,7 +262,7 @@ def onhanziStats():
     w = AnkiWebView()
     l.addWidget(w)
     css = "font{word-wrap:break-word;} div{display:none;}"
-    w.stdHtml(rep, css)
+    w.stdHtml(rep, [css,]) # Fix new bug reported by Andreas Rücklé
     d.setLayout(l)
     d.resize(500, 400)
     restoreGeom(d, "hanzistats")

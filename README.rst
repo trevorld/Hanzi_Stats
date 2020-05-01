@@ -42,6 +42,7 @@ This is an updated version of the Anki Hanzi Stats plugin by Ben Lickly that cou
 6. Got rid of the HSK A, HSK B, HSK E, and HSK I categories.
 7. Fixed some typos.
 8. In the Anki 2.1.x version allows users to configure which categories to show.
+9. Update the code so it still works when there are non-reversible-compatible changes made to Anki (Thanks Andreas Rücklé for patch).
 
 This plugin was originally written by Ben Lickly based on Japanese Stats by Damien Elmes.  This modified version also includes a contribution by Kyle Waranis as well as a couple modified code snippets from the Chinese Support plugin by Roland Sieker and Thomas Tempé (which was also based on a plugin by Damien Elmes).
 

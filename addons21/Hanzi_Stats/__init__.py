@@ -12,7 +12,6 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import unicodedata
-from anki.lang import _
 from anki.hooks import addHook
 from anki.utils import ids2str
 from aqt import mw
@@ -111,7 +110,7 @@ class hanziStats(object):
     #           )
     #   myscore = score([c[1] for c in counts])
     #   maxscore = score([c[2] for c in counts])
-    #   return  _("Score: %d out of %d (%0.1f%%)") % (myscore, maxscore,
+    #   return  "Score: %d out of %d (%0.1f%%)" % (myscore, maxscore,
     #       float(myscore*100)/maxscore)
 
     # FIXME: as it's html, the width doesn't matter
@@ -120,9 +119,9 @@ class hanziStats(object):
         if total:
             d['total'] = self.rjustfig(total, width)
             d['percent'] = float(count)/total*100
-            return _("%(gradename)s: %(count)s of %(total)s (%(percent)0.1f%%).") % d
+            return "%(gradename)s: %(count)s of %(total)s (%(percent)0.1f%%)." % d
         else:
-            return _("%(count)s %(gradename)s Hanzi.") % d
+            return "%(count)s %(gradename)s Hanzi." % d
 
     def rjustfig(self, n, width):
         n = str(n)
@@ -170,23 +169,23 @@ class hanziStats(object):
         self.genhanziSets()
         counts = [(name, len(found), len(all)) \
                   for (name, all), found in zip(self.hanziGrades, self.hanziSets)]
-        out = (_("<h1>Hanzi Statistics</h1>The seen cards in this collection "
-                 "contain:") +
+        out = ("<h1>Hanzi Statistics</h1>The seen cards in this collection "
+                 "contain:" +
                "<ul>" +
                # score
-               #_("<li>%s</li>") % self.totalScoreStr(counts) +
+               #"<li>%s</li>" % self.totalScoreStr(counts) +
                # total hanzi
-               _("<li>%d total unique Hanzi.</li>") %
+               "<li>%d total unique Hanzi.</li>" %
                  len(self.seenhanzi) +
                # hanzi not on lists
                "<li>%s</li>" % self.hanziCountStr(*counts[0])
                )
 
-        out += "</ul><p/>" + _("Statistics:") + "<p/><ul>"
+        out += "</ul><p/>" + "Statistics:" + "<p/><ul>"
         L = ["<li>" + self.hanziCountStr(c[0],c[1],c[2], width=3) + "</li>"
              for c in counts[1:len(freqHanzi)]]
         out += "".join(L)
-#        out += "</ul><p/>" + _(u"HSK levels:") + "<p/><ul>"
+#        out += "</ul><p/>" + u"HSK levels:" + "<p/><ul>"
 #        L = ["<li>" + self.hanziCountStr(c[0],c[1],c[2], width=3) + "</li>"
 #             for c in counts[len(HSKHanzi):]]
 #        out += "".join(L)
@@ -205,7 +204,7 @@ class hanziStats(object):
 
     def missingReport(self):
         check = lambda x, y: x not in y
-        out = '<a name="missing">' + _("<h1>Missing</h1>") + "</a>"
+        out = '<a name="missing">' + "<h1>Missing</h1>" + "</a>"
         out += self._ReportHelper(check)
         return out + "<br/>"
 
@@ -217,12 +216,12 @@ class hanziStats(object):
 
     def seenReport(self):
         check = lambda x, y: x in y
-        out = '<a name="seen">' + _("<h1>Seen</h1>") + "</a>"
+        out = '<a name="seen">' + "<h1>Seen</h1>" + "</a>"
         out += self._ReportHelper(check)
         return  out + "<br/>"
 
     def unlistedReport(self):
-        out = '<a name="unlisted">' + _("<h1>Unlisted</h1>") + "</a>"
+        out = '<a name="unlisted">' + "<h1>Unlisted</h1>" + "</a>"
         out += self.mkhanziLinks("".join(self.hanziSets[0]))
         return out + "<br/>"
 
@@ -261,8 +260,7 @@ def onhanziStats():
     l = QVBoxLayout()
     w = AnkiWebView()
     l.addWidget(w)
-    css = "font{word-wrap:break-word;} div{display:none;}"
-    w.stdHtml(rep, [css,]) # Fix new bug reported by Andreas Rücklé
+    w.stdHtml(rep)
     d.setLayout(l)
     d.resize(500, 400)
     restoreGeom(d, "hanzistats")

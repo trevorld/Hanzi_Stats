@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Modified Hanja plugin to count statistics for Hanzi (simplified)
-# Copyright 2014, 2016-2018 Trevor L. Davis <trevor.l.davis@gmail.com>
+# Copyright 2022 Trevor L. Davis <trevor.l.davis@gmail.com>
 # Copyright 2018 Kyle Waranis <infernalis@gmail.com>
 # Copyright Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>
 # Copyright Ben Lickly <blickly@berkeley.edu>
@@ -9,14 +9,11 @@
 # License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html
 #
 
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+import re
 import unicodedata
-from anki.hooks import addHook
-from anki.utils import ids2str
 from aqt import mw
 from aqt.webview import AnkiWebView
-from aqt.qt import *
+from aqt.qt import QAction, QDialog, QVBoxLayout
 from aqt.utils import restoreGeom, saveGeom
 
 ## Code snippet from Chinese support
@@ -99,21 +96,7 @@ class hanziStats(object):
     def hanziGrade(self, unichar):
         return self._gradeHash.get(unichar, [0])
 
-    # Currently unused function for tallying a "total score" from the counts
-    # def totalScoreStr(self, counts):
-    #   def score(cnts):
-    #       MID,HIGH = 9,10
-    #       return (16*cnts[1] + 8*cnts[2] + 4*cnts[3] + 2*cnts[4] + cnts[5]
-    #           #+ 0.5*cnts[6] #+ 0.25*cnts[7] + 2.5
-    #           + cnts[MID] #+ 0.5*cnts[HIGH]
-    #           - 4
-    #           )
-    #   myscore = score([c[1] for c in counts])
-    #   maxscore = score([c[2] for c in counts])
-    #   return  "Score: %d out of %d (%0.1f%%)" % (myscore, maxscore,
-    #       float(myscore*100)/maxscore)
-
-    # FIXME: as it's html, the width doesn't matter
+    #### FIXME: as it's html, the width doesn't matter
     def hanziCountStr(self, gradename, count, total=0, width=0):
         d = {'count': self.rjustfig(count, width), 'gradename': gradename}
         if total:
@@ -129,14 +112,6 @@ class hanziStats(object):
 
     def genhanziSets(self):
         self.hanziSets = [set([]) for g in self.hanziGrades]
-        # chars = set()
-        # #self.mids = []
-        # for m in self.col.models.all():
-        #     if True:
-        #     # if "chinese" in m['name'].lower():
-        #         for row in self.col.db.execute("select flds from notes where id in ( select n.id from cards c, notes n where c.nid = n.id and mid = ? and c.queue > 0) ", m['id']):
-        #             chars.update(row[0])
-
         chars = set()
 
         config = mw.addonManager.getConfig(__name__)
@@ -172,8 +147,6 @@ class hanziStats(object):
         out = ("<h1>Hanzi Statistics</h1>The seen cards in this collection "
                  "contain:" +
                "<ul>" +
-               # score
-               #"<li>%s</li>" % self.totalScoreStr(counts) +
                # total hanzi
                "<li>%d total unique Hanzi.</li>" %
                  len(self.seenhanzi) +
@@ -185,10 +158,6 @@ class hanziStats(object):
         L = ["<li>" + self.hanziCountStr(c[0],c[1],c[2], width=3) + "</li>"
              for c in counts[1:len(freqHanzi)]]
         out += "".join(L)
-#        out += "</ul><p/>" + u"HSK levels:" + "<p/><ul>"
-#        L = ["<li>" + self.hanziCountStr(c[0],c[1],c[2], width=3) + "</li>"
-#             for c in counts[len(HSKHanzi):]]
-#        out += "".join(L)
         out += "</ul>"
         return out
 
@@ -265,7 +234,7 @@ def onhanziStats():
     d.resize(500, 400)
     restoreGeom(d, "hanzistats")
     mw.progress.finish()
-    d.exec_()
+    d.open()
     saveGeom(d, "hanzistats")
 
 def createMenu():

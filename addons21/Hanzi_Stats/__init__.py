@@ -14,6 +14,7 @@ import unicodedata
 from aqt import mw
 from aqt.webview import AnkiWebView
 from aqt.qt import QAction, QDialog, QVBoxLayout
+from aqt.utils import restoreGeom, saveGeom
 
 ## Code snippet from Chinese support
 def addchars(chars, txt):
@@ -230,9 +231,11 @@ def onhanziStats():
     l.addWidget(w)
     d.setLayout(l)
 
-    d.open()
     d.resize(500, 600)
+    restoreGeom(d, "hanzistats")
     w.stdHtml(rep)
+    d.exec()
+    saveGeom(d, "hanzistats")
 
 def createMenu():
     a = QAction("Hanzi Stats", mw)

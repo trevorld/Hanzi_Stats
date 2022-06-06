@@ -1,9 +1,12 @@
 {
     "fieldToUseForStats": "sortField",
     "hanziURL": "http://hanzicraft.com/character/",
-    "categoriesToShow": ["Unlisted", 
-        "HSK Level 1", "HSK Level 2", "HSK Level 3",
-        "HSK Level 4", "HSK Level 5", "HSK Level 6",
+    "categoriesToShow": [
+        "HSK (2012) Level 1", "HSK (2012) Level 2", "HSK (2012) Level 3",
+        "HSK (2012) Level 4", "HSK (2012) Level 5", "HSK (2012) Level 6",
+        "HSK (2021) Band 1", "HSK (2021) Band 2", "HSK (2021) Band 3",
+        "HSK (2021) Band 4", "HSK (2021) Band 5", "HSK (2021) Band 6",
+        "HSK (2021) Bands 7-9",
         "Simplified Top 500", "Simplified Top 1000", "Simplified Top 1500", 
         "Simplified Top 2000", "Simplified Top 2500", "Simplified Top 3000", 
         "Simplified Top 3500", "Simplified Top 4000", "Simplified Top 4500", 
@@ -11,5 +14,7 @@
         "Traditional Top 500", "Traditional Top 1000", "Traditional Top 1500", 
         "Traditional Top 2000", "Traditional Top 2500", "Traditional Top 3000", 
         "Traditional Top 3500", "Traditional Top 4000", "Traditional Top 4500", 
-        "Traditional Top 5000", "Traditional Top 5500", "Traditional Top 6000"]
+        "Traditional Top 5000", "Traditional Top 5500", "Traditional Top 6000",
+        "Unlisted"
+    ]
 }

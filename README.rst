@@ -7,7 +7,8 @@ Hanzi Stats
 
 This Anki add-on calculates the number of Hanzi that you have learned so far in the following categories: 
 
-* New HSK levels 
+* HSK (2012 aka 2.0) levels 
+* HSK (2021 aka 3.0) bands
 * 6000 most frequently used simplified characters (divided into 12 categories) 
 * 6000 most frequently used traditional characters (divided into 12 categories) 
 
@@ -34,15 +35,16 @@ History
 
 This is an updated version of the Anki Hanzi Stats plugin by Ben Lickly that could previously be found at https://ankiweb.net/shared/info/296672579.  This version includes the following modifications by Trevor L. Davis:
 
-1. The New HSK character lists has been updated from the 2010 version to the 2012 version.
-2. The 6000 most frequent simplified characters in the original plugin have been replaced by the list computed by Dr. Sharoff.  
-3. Add a new list of 6000 most frequent traditional characters.
-4. By default only looks for characters in the "sort field" instead of all fields.  Which field(s) to look for Hanzi can be configured in the Anki 2.1.x version (Thanks Kyle Waranis for patch).
-5. By default clicking character links now sends you to hanzicraft.com instead of dict.cn.  Which URL to look up characters can be configured in the Anki 2.1.x version.
-6. Got rid of the HSK A, HSK B, HSK E, and HSK I categories.
-7. Fixed some typos.
-8. In the Anki 2.1.x version allows users to configure which categories to show.
-9. Update the code so it still works when there are non-reversible-compatible changes made to Anki (Thanks Andreas Rücklé for patch).
+1. The New HSK (aka v2.0) character lists have been updated from the 2010 version to the 2012 version.
+2. Added a new list of the 2021 (aka v3.0) HSK character lists
+3. The 6000 most frequent simplified characters in the original plugin have been replaced by the list computed by Dr. Sharoff.  
+4. Add a new list of 6000 most frequent traditional characters.
+5. By default only looks for characters in the "sort field" instead of all fields.  Which field(s) to look for Hanzi can be configured in the Anki 2.1.x version (Thanks Kyle Waranis for patch).
+6. By default clicking character links now sends you to hanzicraft.com instead of dict.cn.  Which URL to look up characters can be configured in the Anki 2.1.x version.
+7. Got rid of the HSK A, HSK B, HSK E, and HSK I categories.
+8. Fixed some typos.
+9. In the Anki 2.1.x version allows users to configure which categories to show.
+10. Update the code so it still works when there are non-reversible-compatible changes made to Anki (Thanks Andreas Rücklé for patch).
 
 This plugin was originally written by Ben Lickly based on Japanese Stats by Damien Elmes.  This modified version also includes a contribution by Kyle Waranis as well as a couple modified code snippets from the Chinese Support plugin by Roland Sieker and Thomas Tempé (which was also based on a plugin by Damien Elmes).
 
@@ -52,6 +54,8 @@ Data Notes
 ----------
 
 ``data/HSK-2012-words.txt`` is the export of first sheet from http://files.hskhsk.com/lists/HSK-2012.xls which is supposed to be a copy of the official 2012 new HSK word lists.
+
+``data/HSK-2021-words.csv`` is a csv spreadsheet of two columns of just the word/character and matching HSK band extracted from https://ankiweb.net/shared/info/1144807196 which in turn is supposed to be extracted from the official 2021 HSK word/character lists from http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202103/t20210329_523304.html.
 
 ``data/i-zh-char.num.html`` is a character frequency lists from the "Chinese Internet Corpus" compiled by Serge Sharoff in Feb. 2005.  It is available at http://corpus.leeds.ac.uk/query-zh.html.  For more information please read: 
 

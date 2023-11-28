@@ -12,6 +12,7 @@ This Anki add-on calculates the number of Hanzi that you have learned so far in 
 * 6000 most frequently used simplified characters (divided into 12 categories) 
 * 6000 most frequently used traditional characters (divided into 12 categories) 
 * TOCFL (2023) levels
+* TBCL (20220920) levels
 
 Installation
 ------------
@@ -46,7 +47,7 @@ This is an updated version of the Anki Hanzi Stats plugin by Ben Lickly that cou
 8. Fixed some typos.
 9. In the Anki 2.1.x version allows users to configure which categories to show.
 10. Update the code so it still works when there are non-reversible-compatible changes made to Anki (Thanks Andreas Rücklé for patch).
-11. Added a new lists for the Taiwanese TOCFL (2023) wordlists (Thanks Kat Tipton for patch).
+11. Added new lists for the Taiwanese TOCFL (2023) and TBCL (20220920) wordlists (Thanks Kat Tipton for patch).
 
 This plugin was originally written by Ben Lickly based on Japanese Stats by Damien Elmes.  This modified version also includes a contribution by Kyle Waranis as well as a couple modified code snippets from the Chinese Support plugin by Roland Sieker and Thomas Tempé (which was also based on a plugin by Damien Elmes).
 
@@ -66,3 +67,5 @@ Data Notes
 ``data/traditional_frequency.txt`` is a character frequency list from a corpus of all the BIG-5 Chinese characters that appeared on Usenet newsgroups during 1993-1994 which was compiled by Shih-Kun Huang. It is available at http://technology.chtsai.org/charfreq/
 
 ``data/TOCFL-2023-words.csv`` is a csv spreadsheet of two columns of the word and TOCFL level extracted from the official word list at https://tocfl.edu.tw/index.php/exam/download; a machine-friendly copy is available at https://github.com/sneaky-foxes/tocfl (forked from PSeitz/tocfl)
+
+``data/TBCL-20220920-characters.csv`` is a csv spreadsheet extracted from the official TBCL character list from https://coct.naer.edu.tw/standsys/querychar.php?q=&num=4000&page=1&deng_ji=all; a machine-friendly copy is available at https://github.com/sneaky-foxes/tbcl

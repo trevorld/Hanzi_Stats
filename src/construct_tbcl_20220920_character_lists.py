@@ -1,6 +1,8 @@
 # coding: utf-8
 # TBCL-20220920-characters-scrape.html is a curl of
 # https://coct.naer.edu.tw/standsys/querychar.php?q=&num=4000&page=1&deng_ji=all
+# with a computer-friendly copy at
+# https://github.com/sneaky-foxes/tbcl
 
 from bs4 import BeautifulSoup
 from itertools import chain

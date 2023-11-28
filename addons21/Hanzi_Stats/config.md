@@ -35,6 +35,8 @@
   "Traditional Top 2000", "Traditional Top 2500", "Traditional Top 3000", 
   "Traditional Top 3500", "Traditional Top 4000", "Traditional Top 4500", 
   "Traditional Top 5000", "Traditional Top 5500", "Traditional Top 6000",
+  "TOCFL (2023) Novice 1", "TOCFL (2023) Novice 2", "TOCFL (2023) 1",
+  "TOCFL (2023) 2", "TOCFL (2023) 3", "TOCFL (2023) 4", "TOCFL (2023) 5",
   "Unlisted"
   ]
   ```

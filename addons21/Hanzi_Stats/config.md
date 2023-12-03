@@ -21,6 +21,8 @@
 * values: A list of category strings:
   ```json
   [
+  "HSK (1992) Basic", "HSK (1992) Elementary",
+  "HSK (1992) Intermediate", "HSK (1992) Advanced",
   "HSK (2010) Level 1", "HSK (2010) Level 2", "HSK (2010) Level 3",
   "HSK (2010) Level 4", "HSK (2010) Level 5", "HSK (2010) Level 6",
   "HSK (2012) Level 1", "HSK (2012) Level 2", "HSK (2012) Level 3",

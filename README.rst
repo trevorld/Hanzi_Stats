@@ -7,12 +7,15 @@ Hanzi Stats
 
 This Anki add-on calculates the number of Hanzi that you have learned so far in the following categories: 
 
-* HSK (2012 aka 2.0) levels 
+* HSK (2010 aka 2.0) levels
+* HSK (2012 aka 2.0) levels
 * HSK (2021 aka 3.0) bands
-* 6000 most frequently used simplified characters (divided into 12 categories) 
-* 6000 most frequently used traditional characters (divided into 12 categories) 
+* 6000 most frequently used simplified characters (divided into 12 categories)
 * TOCFL (2023) levels
 * TBCL (20220920) levels
+* 6000 most frequently used traditional characters (divided into 12 categories)
+
+Users can configure which categories are enabled or disabled.  By default in new installations we enable the HSK (2012), HSK (2021), and most frequently used characters categories.
 
 Installation
 ------------

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Modified Hanja plugin to count statistics for Hanzi (simplified)
-# Copyright 2022 Trevor L. Davis <trevor.l.davis@gmail.com>
+# Copyright 2023 Trevor L. Davis <trevor.l.davis@gmail.com>
+# Copyright 2023 Kat Tipton <kathryn.tipton@gmail.com>
 # Copyright 2018 Kyle Waranis <infernalis@gmail.com>
 # Copyright Roland Sieker <ospalh@gmail.com> and Thomas TEMPÉ <thomas.tempe@alysse.org>
 # Copyright Ben Lickly <blickly@berkeley.edu>
